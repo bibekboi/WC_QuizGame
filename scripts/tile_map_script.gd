@@ -7,19 +7,20 @@ const hidden_tile_coords = Vector2(0, 1)
 const hidden_tile_alt = 1
 var revealed_spots = []
 var tile_pos_to_atlas_pos = {}
-var score = 0
 var turns_taken = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalScripts.score = 0
 	setup_board()
 	pass # Replace with function body.
 
 func get_tiles_to_use():
 	var chosen_tile_coords = []
-	var options = range(10)
+	var options = range(8)
 	options.shuffle()
 	for i in range(board_size * int(board_size / 2)):
+		print(str(floor(board_size / 2)))
 		var current = Vector2(options.pop_back(), 0)
 		for j in range(2):
 			chosen_tile_coords.append(current)
@@ -34,13 +35,11 @@ func setup_board():
 			place_single_face_down_card(current_spot)
 			var card_atlas_coords = cards_to_use.pop_back()
 			tile_pos_to_atlas_pos[current_spot] = card_atlas_coords
-			self.set_cell(Layers.revealed, current_spot, 
-						SOURCE_NUM, card_atlas_coords)
+			self.set_cell(Layers.revealed, current_spot, SOURCE_NUM, card_atlas_coords)
 
 
 func place_single_face_down_card(coords: Vector2):
-	self.set_cell(Layers.hidden, coords, 
-				SOURCE_NUM, hidden_tile_coords, hidden_tile_alt)
+	self.set_cell(Layers.hidden, coords, SOURCE_NUM, hidden_tile_coords, hidden_tile_alt)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -58,8 +57,8 @@ func _input(event):
 func when_two_cards_revealed():
 	# the cards match
 	if tile_pos_to_atlas_pos[revealed_spots[0]] == tile_pos_to_atlas_pos[revealed_spots[1]]:
-		score += 1
-		print("Score +1")
+		GlobalScripts.score += 1
+		print("Score: " + str(GlobalScripts.score))
 		revealed_spots.clear()
 	else:
 		# the cards did not match
@@ -69,11 +68,13 @@ func when_two_cards_revealed():
 
 
 func put_back_cards_with_delay():
-	await self.get_tree().create_timer(1.5).timeout
+	await self.get_tree().create_timer(1).timeout
 	for spot in revealed_spots:
 		place_single_face_down_card(spot)
 	revealed_spots.clear()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if GlobalScripts.score == 8:
+		
+		get_tree().paused
