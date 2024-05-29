@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://r4tey1m1h1dw"]
+
+[ext_resource type="Texture2D" uid="uid://by2jrvukumkoq" path="res://assets/AssetTileMap_2.png" id="1_7bt8d"]
+[ext_resource type="Script" path="res://scripts/tile_map_script.gd" id="2_j0l2o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rebpi"]
+texture = ExtResource("1_7bt8d")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/next_alternative_id = 2
+0:1/0 = 0
+0:1/1 = 1
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6uisr"]
+tile_size = Vector2i(256, 256)
+sources/1 = SubResource("TileSetAtlasSource_rebpi")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_6uisr")
+format = 2
+layer_0/name = "hidden"
+layer_0/z_index = 5
+layer_1/name = "revealed"
+script = ExtResource("2_j0l2o")

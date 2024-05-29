@@ -11,5 +11,13 @@ config_version=5
 [application]
 
 config/name="WC_QuizGameGodot"
+run/main_scene="res://scenes/home_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
