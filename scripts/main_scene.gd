@@ -29,3 +29,7 @@ func _setTimer():
 	else:
 		print(str(GlobalScripts.time_elapsed))
 		return GlobalScripts.time_elapsed
+
+
+func _on_cross_button_down():
+	get_tree().change_scene_to_file("res://scenes/home_scene.tscn")

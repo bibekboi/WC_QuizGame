@@ -1,0 +1,117 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmhby1b2rfxkm"]
+
+[ext_resource type="Texture2D" uid="uid://be8lebwrku3p7" path="res://assets/BG.png" id="1_pqopq"]
+[ext_resource type="Script" path="res://scripts/score_level.gd" id="1_qcdd6"]
+[ext_resource type="Texture2D" uid="uid://b3gqlurfovbvq" path="res://assets/Shield.png" id="2_xc28c"]
+[ext_resource type="Texture2D" uid="uid://tkdhjpld24co" path="res://assets/Congratulations.png" id="3_lk5yf"]
+[ext_resource type="FontFile" uid="uid://wwgm2ac4x10t" path="res://assets/Fonts/Grandstander-Bold.ttf" id="4_0jdbe"]
+[ext_resource type="Texture2D" uid="uid://1ls71oo444gv" path="res://assets/BlankPlate.png" id="5_qulr6"]
+
+[sub_resource type="FontVariation" id="FontVariation_3g6dl"]
+base_font = ExtResource("4_0jdbe")
+
+[sub_resource type="FontVariation" id="FontVariation_24m51"]
+base_font = ExtResource("4_0jdbe")
+
+[node name="ScoreLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qcdd6")
+metadata/_edit_vertical_guides_ = [540.0]
+
+[node name="BG" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_pqopq")
+
+[node name="ScoreShield" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 483.0
+offset_right = 759.0
+offset_bottom = 948.0
+texture = ExtResource("2_xc28c")
+expand_mode = 1
+
+[node name="Score" type="Label" parent="ScoreShield"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 116.0
+offset_right = 396.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.431373, 0.701961, 0.239216, 1)
+theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
+theme_override_fonts/font = SubResource("FontVariation_3g6dl")
+theme_override_font_sizes/font_size = 200
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score2" type="Label" parent="ScoreShield"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 229.0
+offset_right = 396.0
+offset_bottom = 379.0
+theme_override_colors/font_color = Color(0.431373, 0.701961, 0.239216, 1)
+theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
+theme_override_fonts/font = SubResource("FontVariation_3g6dl")
+theme_override_font_sizes/font_size = 50
+text = "seconds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Congratulations" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 85.0
+offset_right = 955.0
+offset_bottom = 302.0
+texture = ExtResource("3_lk5yf")
+expand_mode = 1
+
+[node name="YouScored" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -637.0
+offset_bottom = -536.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8, 0.462745, 0.270588, 1)
+theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
+theme_override_fonts/font = SubResource("FontVariation_24m51")
+theme_override_font_sizes/font_size = 100
+text = "You Finished In"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = 99.0
+offset_right = 342.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_qulr6")
+expand_mode = 1
+
+[node name="Name" type="LineEdit" parent="Name"]
+layout_mode = 0
+offset_right = 682.0
+offset_bottom = 156.0
+placeholder_text = "YOUR NAME"
+alignment = 1
+flat = true

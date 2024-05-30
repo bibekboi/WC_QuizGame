@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3fhrv16qu81"]
+[gd_scene load_steps=9 format=3 uid="uid://b3fhrv16qu81"]
 
 [ext_resource type="Texture2D" uid="uid://be8lebwrku3p7" path="res://assets/BG.png" id="1_6l3q2"]
 [ext_resource type="PackedScene" uid="uid://r4tey1m1h1dw" path="res://scenes/tile_map_scene.tscn" id="1_f8fqx"]
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_oc7ww"]
+[ext_resource type="Texture2D" uid="uid://b26hsn2uocget" path="res://assets/Cross.png" id="4_65yr8"]
+[ext_resource type="FontFile" uid="uid://wwgm2ac4x10t" path="res://assets/Fonts/Grandstander-Bold.ttf" id="4_hwp8w"]
+[ext_resource type="Texture2D" uid="uid://qivoopvidsxw" path="res://assets/Cross_Pressed.png" id="5_fr1n3"]
+[ext_resource type="Texture2D" uid="uid://blqg11wrnib4p" path="res://assets/ElapsedTime.png" id="6_t5mx3"]
+
+[sub_resource type="FontVariation" id="FontVariation_eokdm"]
+base_font = ExtResource("4_hwp8w")
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -12,6 +19,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oc7ww")
+metadata/_edit_horizontal_guides_ = [203.0]
+metadata/_edit_vertical_guides_ = [540.0]
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 0
@@ -21,16 +30,48 @@ texture = ExtResource("1_6l3q2")
 
 [node name="TileMap" parent="." instance=ExtResource("1_f8fqx")]
 position = Vector2(25, 480)
-layer_0/enabled = false
 
 [node name="Timer" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 152.0
-offset_bottom = 357.0
+offset_top = 299.0
+offset_bottom = 449.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.462745, 0.270588, 1)
+theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
+theme_override_fonts/font = SubResource("FontVariation_eokdm")
 theme_override_font_sizes/font_size = 150
 text = "TIMER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Cross" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 1604.0
+offset_right = 607.0
+offset_bottom = 1740.0
+texture_normal = ExtResource("4_65yr8")
+texture_pressed = ExtResource("5_fr1n3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ElapsedTime" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.269792
+anchor_right = 0.769444
+anchor_bottom = 0.346875
+offset_left = 34.0
+offset_top = -375.0
+offset_right = -53.0
+offset_bottom = -398.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(288, 77)
+texture = ExtResource("6_t5mx3")
+expand_mode = 1
+
+[connection signal="button_down" from="Cross" to="." method="_on_cross_button_down"]

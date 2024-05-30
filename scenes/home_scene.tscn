@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhj6nmn5ck882"]
+[gd_scene load_steps=12 format=3 uid="uid://dhj6nmn5ck882"]
 
 [ext_resource type="Texture2D" uid="uid://be8lebwrku3p7" path="res://assets/BG.png" id="1_e83n6"]
 [ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_k50as"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bgh0112sf15os" path="res://assets/Leaderboard_Pressed.png" id="5_i60o5"]
 [ext_resource type="Texture2D" uid="uid://qmiqt4h0d1f6" path="res://assets/Exit.png" id="6_obww2"]
 [ext_resource type="Texture2D" uid="uid://d0rxabv2qs4m3" path="res://assets/Exit_Pressed.png" id="7_wjpuu"]
+[ext_resource type="Texture2D" uid="uid://mh6yublv1iu1" path="res://assets/Audio.png" id="9_1fqj0"]
+[ext_resource type="Texture2D" uid="uid://houymvbb85pk" path="res://assets/Audio_Pressed.png" id="10_helji"]
+[ext_resource type="Texture2D" uid="uid://hw0usj1xnkwi" path="res://assets/Mute.png" id="11_wpw8c"]
 
 [node name="HomeScene" type="Control"]
 layout_mode = 3
@@ -32,9 +35,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -353.5
-offset_top = -316.0
+offset_top = -384.0
 offset_right = 353.5
-offset_bottom = -158.0
+offset_bottom = -226.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_o5yyp")
@@ -50,9 +53,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -353.5
-offset_top = -87.0
+offset_top = -155.0
 offset_right = 353.5
-offset_bottom = 71.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_l2c0t")
@@ -68,13 +71,32 @@ anchor_top = 0.485938
 anchor_right = 0.5
 anchor_bottom = 0.485938
 offset_left = -353.5
-offset_top = 175.0
+offset_top = 107.0
 offset_right = 353.5
-offset_bottom = 333.0
+offset_bottom = 265.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("6_obww2")
 texture_pressed = ExtResource("7_wjpuu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Audio" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.5
+offset_top = -624.0
+offset_right = 57.5
+offset_bottom = -509.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("9_1fqj0")
+texture_pressed = ExtResource("10_helji")
+texture_disabled = ExtResource("11_wpw8c")
 ignore_texture_size = true
 stretch_mode = 0
 
