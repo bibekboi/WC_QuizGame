@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cstgi2onil526"]
+[gd_scene load_steps=8 format=3 uid="uid://cstgi2onil526"]
 
 [ext_resource type="Script" path="res://scripts/login_screen.gd" id="1_8ntf7"]
 [ext_resource type="Texture2D" uid="uid://be8lebwrku3p7" path="res://assets/BG.png" id="1_hpjww"]
 [ext_resource type="Texture2D" uid="uid://1ls71oo444gv" path="res://assets/BlankPlate.png" id="2_4atwp"]
+[ext_resource type="FontFile" uid="uid://wwgm2ac4x10t" path="res://assets/Fonts/Grandstander-Bold.ttf" id="4_fqkc6"]
+[ext_resource type="Texture2D" uid="uid://b26hsn2uocget" path="res://assets/Cross.png" id="5_bm0dr"]
+[ext_resource type="Texture2D" uid="uid://qivoopvidsxw" path="res://assets/Cross_Pressed.png" id="6_7u84q"]
+
+[sub_resource type="FontVariation" id="FontVariation_7gmx7"]
+base_font = ExtResource("4_fqkc6")
 
 [node name="LoginScreen" type="Control"]
 layout_mode = 3
@@ -14,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_8ntf7")
 
 [node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_hpjww")
@@ -35,14 +42,25 @@ texture_normal = ExtResource("2_4atwp")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="LineEdit" type="LineEdit" parent="Register"]
-visible = false
-layout_mode = 0
-offset_right = 620.0
-offset_bottom = 140.0
-placeholder_text = "REGISTER"
-alignment = 1
-flat = true
+[node name="Register" type="Label" parent="Register"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -48.0
+offset_right = 48.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.513726, 0.207843, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
+theme_override_fonts/font = SubResource("FontVariation_7gmx7")
+theme_override_font_sizes/font_size = 100
+text = "Register"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Login" type="TextureButton" parent="."]
 layout_mode = 1
@@ -61,14 +79,25 @@ texture_normal = ExtResource("2_4atwp")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="LineEdit" type="LineEdit" parent="Login"]
-visible = false
-layout_mode = 0
-offset_right = 620.0
-offset_bottom = 140.0
-placeholder_text = "LOGIN"
-alignment = 1
-flat = true
+[node name="Login" type="Label" parent="Login"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -49.0
+offset_right = 48.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.513726, 0.207843, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
+theme_override_fonts/font = SubResource("FontVariation_7gmx7")
+theme_override_font_sizes/font_size = 100
+text = "Login"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Logout" type="TextureButton" parent="."]
 layout_mode = 1
@@ -87,15 +116,37 @@ texture_normal = ExtResource("2_4atwp")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="LineEdit" type="LineEdit" parent="Logout"]
-visible = false
-layout_mode = 0
-offset_right = 620.0
-offset_bottom = 140.0
-placeholder_text = "LOGOUT"
-alignment = 1
-flat = true
+[node name="Logout" type="Label" parent="Logout"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -51.0
+offset_right = 48.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.513726, 0.207843, 0.133333, 1)
+theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
+theme_override_fonts/font = SubResource("FontVariation_7gmx7")
+theme_override_font_sizes/font_size = 100
+text = "Logout"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cross" type="TextureButton" parent="."]
+offset_left = 481.0
+offset_top = 1525.0
+offset_right = 607.0
+offset_bottom = 1661.0
+texture_normal = ExtResource("5_bm0dr")
+texture_pressed = ExtResource("6_7u84q")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="Register" to="." method="_on_register_pressed"]
 [connection signal="pressed" from="Login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="Logout" to="." method="_on_logout_pressed"]
+[connection signal="pressed" from="Cross" to="." method="_on_cross_pressed"]

@@ -7,6 +7,7 @@
 [sub_resource type="Theme" id="Theme_j1gah"]
 
 [node name="Leaderboard" type="Node2D"]
+position = Vector2(-411, -195)
 script = ExtResource("1")
 
 [node name="OldBoard" type="MarginContainer" parent="."]

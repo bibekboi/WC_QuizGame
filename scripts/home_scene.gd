@@ -10,7 +10,7 @@ func _on_new_game_button_down():
 
 
 func _on_leaderboard_button_down():
-	print("Leaderboard Pressed!")
+	get_tree().change_scene_to_file("res://addons/silent_wolf/Scores/Leaderboard.tscn")
 
 
 func _on_quit_game_button_down():

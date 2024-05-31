@@ -49,7 +49,7 @@ func registration_success() -> void:
 		scene_name = SilentWolf.auth_config.email_confirmation_scene
 	else:
 		SWLogger.info("registration succeeded, logged in player: " + str(SilentWolf.Auth.logged_in_player))
-	get_tree().change_scene_to_file(scene_name)
+	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
 
 
 func registration_user_pwd_success() -> void:

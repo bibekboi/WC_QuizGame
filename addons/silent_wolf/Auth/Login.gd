@@ -26,8 +26,7 @@ func _on_login_complete(sw_result: Dictionary) -> void:
 func login_success() -> void:
 	var scene_name = SilentWolf.auth_config.redirect_to_scene
 	SWLogger.info("logged in as: " + str(SilentWolf.Auth.logged_in_player))
-	get_tree().change_scene_to_file(scene_name)
-
+	get_tree().change_scene_to_file("res://scripts/main_scene.gd")
 
 func login_failure(error: String) -> void:
 	hide_processing_label()
