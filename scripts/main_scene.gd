@@ -2,6 +2,7 @@ extends Control
 
 @onready var timer: Label = $Timer
 
+
 var time_start = 0
 var time_now = 0
 
@@ -20,6 +21,7 @@ func _process(delta):
 
 func _process(delta):
 	_setTimer()
+
 
 func _setTimer():
 	if GlobalScripts.score < 8:

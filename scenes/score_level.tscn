@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmhby1b2rfxkm"]
+[gd_scene load_steps=13 format=3 uid="uid://cmhby1b2rfxkm"]
 
 [ext_resource type="Texture2D" uid="uid://be8lebwrku3p7" path="res://assets/BG.png" id="1_pqopq"]
 [ext_resource type="Script" path="res://scripts/score_level.gd" id="1_qcdd6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://tkdhjpld24co" path="res://assets/Congratulations.png" id="3_lk5yf"]
 [ext_resource type="FontFile" uid="uid://wwgm2ac4x10t" path="res://assets/Fonts/Grandstander-Bold.ttf" id="4_0jdbe"]
 [ext_resource type="Texture2D" uid="uid://b26hsn2uocget" path="res://assets/Cross.png" id="7_8qy4d"]
+[ext_resource type="Texture2D" uid="uid://rstpfqafsear" path="res://assets/SubmitScore.png" id="8_32qvi"]
 [ext_resource type="Texture2D" uid="uid://flq336fdg03d" path="res://assets/Leaderboard.png" id="8_oo2fb"]
 [ext_resource type="Texture2D" uid="uid://qivoopvidsxw" path="res://assets/Cross_Pressed.png" id="8_s1dql"]
 [ext_resource type="Texture2D" uid="uid://bgh0112sf15os" path="res://assets/Leaderboard_Pressed.png" id="9_du7se"]
@@ -35,9 +36,9 @@ texture = ExtResource("1_pqopq")
 [node name="ScoreShield" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 321.0
-offset_top = 563.0
+offset_top = 630.0
 offset_right = 759.0
-offset_bottom = 1028.0
+offset_bottom = 1095.0
 texture = ExtResource("2_xc28c")
 expand_mode = 1
 
@@ -97,12 +98,30 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Cross" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 481.0
-offset_top = 1604.0
+offset_top = 1634.0
 offset_right = 607.0
-offset_bottom = 1740.0
+offset_bottom = 1770.0
 texture_normal = ExtResource("7_8qy4d")
 texture_pressed = ExtResource("8_s1dql")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SubmitScore" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.5
+offset_top = 227.0
+offset_right = 353.5
+offset_bottom = 385.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_32qvi")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -113,16 +132,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -353.5
-offset_top = 263.0
-offset_right = 353.5
-offset_bottom = 421.0
+offset_left = -257.5
+offset_top = 444.0
+offset_right = 257.5
+offset_bottom = 559.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(1160.5, -265)
 texture_normal = ExtResource("8_oo2fb")
 texture_pressed = ExtResource("9_du7se")
 ignore_texture_size = true
 stretch_mode = 0
 
 [connection signal="pressed" from="Cross" to="." method="_on_cross_pressed"]
-[connection signal="button_down" from="Leaderboard" to="." method="_on_leaderboard_button_down"]
+[connection signal="pressed" from="SubmitScore" to="." method="_on_submit_score_pressed"]

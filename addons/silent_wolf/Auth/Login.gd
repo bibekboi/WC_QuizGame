@@ -19,9 +19,9 @@ func _on_LoginButton_pressed() -> void:
 func _on_login_complete(sw_result: Dictionary) -> void:
 	if sw_result.success:
 		login_success()
+		get_tree().change_scene_to_file("res://scenes/home_scene.tscn")
 	else:
 		login_failure(sw_result.error)
-
 
 func login_success() -> void:
 	var scene_name = SilentWolf.auth_config.redirect_to_scene

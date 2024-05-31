@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi7lxcglf2tnc"]
+[gd_scene load_steps=10 format=3 uid="uid://bi7lxcglf2tnc"]
 
 [ext_resource type="Script" path="res://addons/silent_wolf/Auth/Login.gd" id="1"]
 [ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="1_bbh8k"]
 [ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://bpn62aabunxva" path="res://addons/silent_wolf/assets/gfx/checkbox_checked.png" id="4_ak74a"]
+[ext_resource type="Texture2D" uid="uid://cja66hk7kianw" path="res://assets/Back.png" id="4_hev8g"]
 [ext_resource type="Texture2D" uid="uid://bgs8a50ilk5cj" path="res://addons/silent_wolf/assets/gfx/checkbox_unchecked.png" id="5_3asm1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o52ik"]
@@ -32,19 +33,23 @@ script = ExtResource("1")
 [node name="BackButton" parent="." instance=ExtResource("2")]
 process_priority = 1
 layout_mode = 0
-offset_left = 595.0
-offset_top = 148.0
-offset_right = 740.0
-offset_bottom = 197.0
+offset_left = 510.0
+offset_top = -265.0
+offset_right = 623.0
+offset_bottom = -144.0
 focus_mode = 1
-text = "← Back"
+text = ""
+icon = ExtResource("4_hev8g")
+flat = true
+expand_icon = true
 
 [node name="FormContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 435.0
-offset_top = 226.0
-offset_right = 1562.0
-offset_bottom = 990.0
+offset_left = 107.0
+offset_top = -70.0
+offset_right = 1234.0
+offset_bottom = 694.0
+scale = Vector2(1.44, 1.44)
 theme_override_constants/separation = 24
 alignment = 1
 

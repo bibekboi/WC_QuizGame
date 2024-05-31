@@ -11,6 +11,7 @@ func _on_login_pressed():
 
 func _on_logout_pressed():
 	SilentWolf.Auth.logout_player()
+	get_tree().change_scene_to_file("res://scenes/home_scene.tscn")
 
 
 func _on_cross_pressed() -> void:

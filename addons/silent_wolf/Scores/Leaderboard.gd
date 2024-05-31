@@ -13,6 +13,12 @@ var max_scores = 10
 func _ready():
 	print("SilentWolf.Scores.leaderboards: " + str(SilentWolf.Scores.leaderboards))
 	print("SilentWolf.Scores.ldboard_config: " + str(SilentWolf.Scores.ldboard_config))
+	
+	"""
+	var sw_result_new: Dictionary = await SilentWolf.Scores.get_scores().sw_get_scores_complete
+	print("Scores: " + str(sw_result_new.scores))
+	"""
+	
 	var scores = SilentWolf.Scores.scores
 	#var scores = []
 	if ld_name in SilentWolf.Scores.leaderboards:
@@ -87,10 +93,14 @@ func score_in_score_array(scores: Array, new_score: Dictionary) -> bool:
 func add_item(player_name: String, score_value: String) -> void:
 	var item = ScoreItem.instantiate()
 	list_index += 1
-	item.get_node("PlayerName").text = str(list_index) + str(". ") + player_name
+	var negative_list_index = max_scores
+	item.get_node("PlayerName").text = player_name
+	#item.get_node("PlayerName").text = str(list_index) + str(". ") + player_name
+	#item.get_node("PlayerName").text = str(negative_list_index) + str(". ") + player_name
 	item.get_node("Score").text = score_value
 	item.offset_top = list_index * 100
 	$"Board/HighScores/ScoreItemContainer".add_child(item)
+	$"Board/HighScores/ScoreItemContainer".move_child(item, 0)
 
 
 func add_no_scores_message() -> void:

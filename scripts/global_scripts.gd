@@ -4,12 +4,6 @@ var score = 0
 var score_to_win = 8
 var time_elapsed
 
-var player_name
-var email
-var password
-var confirm_password
-
-
 func _ready():
 	SilentWolf.configure({
 		"api_key": "qX98DtypRz8oLTy9as03G5B6ZrnlDj2o4qF7SrcG",

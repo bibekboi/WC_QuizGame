@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhj6nmn5ck882"]
+[gd_scene load_steps=14 format=3 uid="uid://dhj6nmn5ck882"]
 
 [ext_resource type="Texture2D" uid="uid://be8lebwrku3p7" path="res://assets/BG.png" id="1_e83n6"]
 [ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_k50as"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://mh6yublv1iu1" path="res://assets/Audio.png" id="9_1fqj0"]
 [ext_resource type="Texture2D" uid="uid://houymvbb85pk" path="res://assets/Audio_Pressed.png" id="10_helji"]
 [ext_resource type="Texture2D" uid="uid://hw0usj1xnkwi" path="res://assets/Mute.png" id="11_wpw8c"]
+[ext_resource type="PackedScene" uid="uid://b2h8ok8yfc7wb" path="res://addons/silent_wolf/Scores/Leaderboard.tscn" id="12_vi6yg"]
+[ext_resource type="Texture2D" uid="uid://ri1rig5wirsi" path="res://assets/Background.jpg" id="13_3k8qd"]
 
 [node name="HomeScene" type="Control"]
 layout_mode = 3
@@ -100,6 +102,31 @@ texture_disabled = ExtResource("11_wpw8c")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="LeaderboardScene" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -411.0
+offset_top = -195.0
+offset_right = -371.0
+offset_bottom = -155.0
+
+[node name="Leaderboard_BG" type="TextureRect" parent="LeaderboardScene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 411.0
+offset_top = 195.0
+offset_right = 1451.0
+offset_bottom = 2075.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_3k8qd")
+
+[node name="Leaderboard2" parent="LeaderboardScene" instance=ExtResource("12_vi6yg")]
+position = Vector2(0, 0)
+
 [connection signal="button_down" from="NewGame" to="." method="_on_new_game_button_down"]
-[connection signal="button_down" from="Leaderboard" to="." method="_on_leaderboard_button_down"]
+[connection signal="pressed" from="Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="button_down" from="QuitGame" to="." method="_on_quit_game_button_down"]
