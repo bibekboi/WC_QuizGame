@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://chxe78yjqftkl"]
+[gd_scene load_steps=8 format=3 uid="uid://chxe78yjqftkl"]
 
 [ext_resource type="Script" path="res://addons/silent_wolf/Auth/Register.gd" id="1"]
 [ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="1_dsws8"]
 [ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://be8lebwrku3p7" path="res://assets/BG.png" id="3_07qfh"]
+[ext_resource type="FontVariation" uid="uid://cd5tf4lb4ckbs" path="res://fontVariation/new_font_variation.tres" id="4_8xv05"]
 [ext_resource type="Texture2D" uid="uid://dh8fem1lgom04" path="res://addons/silent_wolf/assets/gfx/info_icon_small.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://gdw18po2h7hb" path="res://addons/silent_wolf/assets/gfx/dummy_info_icon_small.png" id="6"]
 
@@ -17,12 +19,23 @@ grow_vertical = 2
 theme = ExtResource("1_dsws8")
 script = ExtResource("1")
 
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 390.0
+offset_top = -35.0
+offset_right = 1546.0
+offset_bottom = 2020.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_07qfh")
+
 [node name="BackButton" parent="." instance=ExtResource("2")]
 layout_mode = 0
 offset_left = 575.0
 offset_top = 341.0
 offset_right = 712.0
-offset_bottom = 382.0
+offset_bottom = 390.0
+theme_override_fonts/font = ExtResource("4_8xv05")
 theme_override_font_sizes/font_size = 36
 text = "← Back"
 
@@ -36,6 +49,8 @@ theme_override_constants/separation = 36
 
 [node name="Label" type="Label" parent="FormContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.407843, 0.172549, 0.113725, 1)
+theme_override_fonts/font = ExtResource("4_8xv05")
 theme_override_font_sizes/font_size = 72
 text = "Sign up"
 horizontal_alignment = 1
@@ -51,21 +66,31 @@ theme_override_constants/separation = 32
 
 [node name="PlayerNameLabel" type="Label" parent="FormContainer/MainFormContainer/FormLabels"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.407843, 0.172549, 0.113725, 1)
+theme_override_fonts/font = ExtResource("4_8xv05")
 theme_override_font_sizes/font_size = 36
 text = "Username:"
 
 [node name="EmailLabel" type="Label" parent="FormContainer/MainFormContainer/FormLabels"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.407843, 0.172549, 0.113725, 1)
+theme_override_fonts/font = ExtResource("4_8xv05")
 theme_override_font_sizes/font_size = 36
 text = "Email:"
 
 [node name="PasswordLabel" type="Label" parent="FormContainer/MainFormContainer/FormLabels"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.407843, 0.172549, 0.113725, 1)
+theme_override_fonts/font = ExtResource("4_8xv05")
 theme_override_font_sizes/font_size = 36
 text = "Password:"
 
 [node name="ConfirmPasswordLabel" type="Label" parent="FormContainer/MainFormContainer/FormLabels"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.407843, 0.172549, 0.113725, 1)
+theme_override_fonts/font = ExtResource("4_8xv05")
 theme_override_font_sizes/font_size = 36
 text = "Confirm password:"
 
@@ -123,8 +148,10 @@ icon = ExtResource("6")
 [node name="InfoBox" type="Label" parent="FormContainer"]
 visible = false
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.172549, 0.113725, 1)
 text = "Password should contain at least 8 characters including uppercase and lowercase letters, numbers and (optionally) special characters."
-autowrap_mode = 1
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="ErrorMessage" type="Label" parent="FormContainer"]
 visible = false
@@ -146,6 +173,7 @@ text = "Submit"
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.407843, 0.172549, 0.113725, 1)
 theme_override_font_sizes/font_size = 36
 text = "Processing..."
 

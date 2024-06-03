@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cstgi2onil526"]
+[gd_scene load_steps=11 format=3 uid="uid://cstgi2onil526"]
 
 [ext_resource type="Script" path="res://scripts/login_screen.gd" id="1_8ntf7"]
 [ext_resource type="Texture2D" uid="uid://be8lebwrku3p7" path="res://assets/BG.png" id="1_hpjww"]
-[ext_resource type="Texture2D" uid="uid://1ls71oo444gv" path="res://assets/BlankPlate.png" id="2_4atwp"]
-[ext_resource type="FontFile" uid="uid://wwgm2ac4x10t" path="res://assets/Fonts/Grandstander-Bold.ttf" id="4_fqkc6"]
+[ext_resource type="Texture2D" uid="uid://bdt5iltoi1suw" path="res://assets/Register.png" id="3_2hve8"]
+[ext_resource type="Texture2D" uid="uid://cqy0ttgtia0w1" path="res://assets/Register_Pressed.png" id="4_iw43i"]
+[ext_resource type="Texture2D" uid="uid://bror6gvqw8yjw" path="res://assets/Login.png" id="5_8wp2s"]
 [ext_resource type="Texture2D" uid="uid://b26hsn2uocget" path="res://assets/Cross.png" id="5_bm0dr"]
 [ext_resource type="Texture2D" uid="uid://qivoopvidsxw" path="res://assets/Cross_Pressed.png" id="6_7u84q"]
-
-[sub_resource type="FontVariation" id="FontVariation_7gmx7"]
-base_font = ExtResource("4_fqkc6")
+[ext_resource type="Texture2D" uid="uid://dauthes6ue5da" path="res://assets/Login_Pressed.png" id="6_qqoep"]
+[ext_resource type="Texture2D" uid="uid://d3c76gw581575" path="res://assets/Logout.png" id="7_pcm7n"]
+[ext_resource type="Texture2D" uid="uid://h38h8vmwgo5w" path="res://assets/LogOut_Pressed.png" id="8_3w5y1"]
 
 [node name="LoginScreen" type="Control"]
 layout_mode = 3
@@ -18,6 +19,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8ntf7")
+metadata/_edit_horizontal_guides_ = [575.0, 1295.0, 1411.0]
+metadata/_edit_vertical_guides_ = [187.0, 894.0]
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 0
@@ -32,35 +35,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -313.0
-offset_top = -292.0
-offset_right = 313.0
-offset_bottom = -152.0
+offset_left = -353.0
+offset_top = -386.0
+offset_right = 353.0
+offset_bottom = -228.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_4atwp")
+texture_normal = ExtResource("3_2hve8")
+texture_pressed = ExtResource("4_iw43i")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="Register" type="Label" parent="Register"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -48.5
-offset_top = -48.0
-offset_right = 48.5
-offset_bottom = 53.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.513726, 0.207843, 0.133333, 1)
-theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
-theme_override_fonts/font = SubResource("FontVariation_7gmx7")
-theme_override_font_sizes/font_size = 80
-text = "Register"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Login" type="TextureButton" parent="."]
 layout_mode = 1
@@ -69,35 +53,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -313.0
-offset_top = -72.0
-offset_right = 313.0
-offset_bottom = 68.0
+offset_left = -353.0
+offset_top = -166.0
+offset_right = 353.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_4atwp")
+texture_normal = ExtResource("5_8wp2s")
+texture_pressed = ExtResource("6_qqoep")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="Login" type="Label" parent="Login"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -48.5
-offset_top = -49.0
-offset_right = 48.5
-offset_bottom = 52.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.513726, 0.207843, 0.133333, 1)
-theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
-theme_override_fonts/font = SubResource("FontVariation_7gmx7")
-theme_override_font_sizes/font_size = 80
-text = "Login"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Logout" type="TextureButton" parent="."]
 layout_mode = 1
@@ -106,42 +71,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -313.0
-offset_top = 149.0
-offset_right = 313.0
-offset_bottom = 289.0
+offset_left = -353.0
+offset_top = 55.0
+offset_right = 353.0
+offset_bottom = 213.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_4atwp")
+texture_normal = ExtResource("7_pcm7n")
+texture_pressed = ExtResource("8_3w5y1")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Logout" type="Label" parent="Logout"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -48.5
-offset_top = -51.0
-offset_right = 48.5
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.513726, 0.207843, 0.133333, 1)
-theme_override_colors/font_shadow_color = Color(0.886275, 0.619608, 0.321569, 1)
-theme_override_fonts/font = SubResource("FontVariation_7gmx7")
-theme_override_font_sizes/font_size = 80
-text = "Logout"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Cross" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 481.0
-offset_top = 1525.0
-offset_right = 607.0
-offset_bottom = 1661.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -625.0
+offset_right = 55.0
+offset_bottom = -509.0
+grow_horizontal = 2
+grow_vertical = 0
 texture_normal = ExtResource("5_bm0dr")
 texture_pressed = ExtResource("6_7u84q")
 ignore_texture_size = true

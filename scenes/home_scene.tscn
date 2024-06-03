@@ -22,6 +22,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k50as")
+metadata/_edit_horizontal_guides_ = [576.0, 1295.0, 1411.0]
+metadata/_edit_vertical_guides_ = [187.0, 894.0]
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 0
